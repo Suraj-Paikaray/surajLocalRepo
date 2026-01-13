@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Productivity Stats</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-10 bg-background-light dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between">
+<div class="flex size-10 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center mr-10">Productivity Stats</h1>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Today's Progress Section -->
+<div class="p-6 flex flex-col items-center">
+<div class="relative flex items-center justify-center w-48 h-48">
+<!-- Circular Progress Background -->
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-gray-200 dark:text-gray-800" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<!-- Circular Progress Primary -->
+<circle class="text-primary" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="125.65" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<!-- Percentage Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-bold">75%</span>
+<span class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-widest">Done Today</span>
+</div>
+</div>
+<div class="mt-6 text-center">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal">
+                    You have finished <span class="text-gray-900 dark:text-white font-semibold">12 of 16</span> tasks today
+                </p>
+<div class="mt-2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>15% better than yesterday</span>
+</div>
+</div>
+</div>
+<!-- Summary Stats Grid -->
+<div class="px-4 py-2">
+<h3 class="text-sm font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-4 px-1">Performance Summary</h3>
+<div class="grid grid-cols-2 gap-4">
+<!-- Total Tasks -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2431] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-primary">assignment</span>
+<span class="text-[10px] font-bold text-gray-400 uppercase">Lifetime</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">Total Tasks</p>
+<p class="text-3xl font-bold">42</p>
+</div>
+<!-- Completed -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2431] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<span class="text-[10px] font-bold text-gray-400 uppercase">Success</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">Completed</p>
+<p class="text-3xl font-bold">30</p>
+</div>
+<!-- Pending -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2431] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-orange-500">pending_actions</span>
+<span class="text-[10px] font-bold text-gray-400 uppercase">To Go</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">Pending</p>
+<p class="text-3xl font-bold">12</p>
+</div>
+<!-- Active Streak -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1c2431] border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="material-symbols-outlined text-red-500">local_fire_department</span>
+<span class="text-[10px] font-bold text-gray-400 uppercase">Streak</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium">Daily Streak</p>
+<p class="text-3xl font-bold">7</p>
+</div>
+</div>
+</div>
+<!-- Weekly Performance Chart Section -->
+<div class="mt-4 px-4">
+<div class="bg-white dark:bg-[#1c2431] rounded-xl p-5 border border-gray-100 dark:border-gray-800 shadow-sm">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Weekly Completion</h4>
+<p class="text-2xl font-bold">+15%</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-gray-400 font-normal">Last 7 days</p>
+<p class="text-green-500 text-xs font-bold">+5% vs prev.</p>
+</div>
+</div>
+<div class="h-32 w-full mt-2 relative">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 472 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 100C30 90 60 20 90 20C120 20 150 50 180 50C210 50 240 80 270 80C300 80 330 30 360 30C390 30 420 10 450 10C480 10 510 50 540 50" stroke="#2b6cee" stroke-linecap="round" stroke-width="4"></path>
+<path d="M0 100C30 90 60 20 90 20C120 20 150 50 180 50C210 50 240 80 270 80C300 80 330 30 360 30C390 30 420 10 450 10V120H0V100Z" fill="url(#chartGradient)"></path>
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2b6cee" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#2b6cee" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between mt-4 px-1">
+<p class="text-gray-400 text-[10px] font-bold uppercase">Mon</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Tue</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Wed</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Thu</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Fri</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Sat</p>
+<p class="text-gray-400 text-[10px] font-bold uppercase">Sun</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Footer for Action -->
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-gray-100 dark:border-gray-800">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">mop</span>
+            Clean Up Completed Tasks
+        </button>
+</footer>
+</body></html>
